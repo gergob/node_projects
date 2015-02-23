@@ -39,21 +39,40 @@
      <div id="main-grid" class="row">
        <div class="col-md-3">
          <h3>Rooms</h3>
+         <div id="room-list">
+         </div>
+         
        </div>
        <div class="col-md-1"></div>
        <div class="col-md-8">
-         <h1>Chat window</h1>
+         <h3>Chat window</h3>
+         <div id="room" class="alert alert-success">
+         </div>
+         <div id="messages">
+         </div>
+         <div class="panel panel-default">
+          <div class="panel-body">
+            <form id="send-form">
+              <input id="send-message" placeholder="Enter message here..." />
+              <input id="send-button" type="submit" value="Send Message" /> 
+            </form>
+          </div>
+         </div>
        </div>
-
      </div>
+     
 
     </div><!-- /.container -->
 
 
 
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/chat.js"></script>
+    <script type="text/javascript" src="/js/chat_helper.js"></script>
+
   </body>
 </html>

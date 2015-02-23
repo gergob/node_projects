@@ -61,4 +61,5 @@ var server = http.createServer(function(request, response){
 
 server.listen(8989, function() {
 	console.log("Started node_chat, listening on port 8989.");
+	chat_server.listenForUsers(server);
 });
