@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #{error_message}
+  
+  ul
+    each contact in contacts.length ? contacts : ["There are no Contacts in the DB."]
+      li #{contact.first_name} #{contact.last_name} 
+      a(href="#{contact.website}") #{contact.website} 
