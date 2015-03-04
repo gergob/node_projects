@@ -35,6 +35,18 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+app.use(function(err, req, res, next) {
+  if(err) {
+    res.render('error', { 
+        message : "Sorry, an error occured!", 
+        route: req.originalUrl,
+        error:err 
+    });
+  }
+  else {
+    next();
+  }
+});
 
 // development error handler
 // will print stacktrace

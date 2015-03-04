@@ -2,5 +2,7 @@ extends layout
 
 block content
   h1= message
-  h2= error.status
+  h3= error.status
+  h3= error.message
+  p= route
   pre #{error.stack}
