@@ -13,6 +13,8 @@ router.get('/', function(req, res, next) {
   		res.render('contacts', { title: "Error" , welcom_message: error });
   	}
   	else if(data) {
+      console.log("data recieved, rendering page");
+      res.render('contacts', {title:"All Contacts", welcom_message: "Angular Directives in charge!", contacts:data })
   	}
   	else {
   		res.render('contacts', { title: "Error" , welcom_message: "No meaningful response from the server:" + req.originalUrl });	
@@ -20,13 +22,18 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/template/contactCard', function(req, res, next) {
+  res.render('contactCard');
+});
+
+
 router.get('/:name', function(req, res) {
   	contacts.getContactsByName(req.params.name, function(error, data) {
   		if(error) {
   			res.render('error', { message : error });
   		}
       var tmpResult = [];
-      if(req.query) {
+      if(Object.keys(req.query).length > 0) {
           console.log(req.query);
           data.forEach(function(item){
             var tmpObj = {};
@@ -39,7 +46,9 @@ router.get('/:name', function(req, res) {
           });
       }
       else {
-        tmpResult = data;
+        data.forEach(function(item){          
+          tmpResult.push(item);
+        });
       }
 
   		res.status(200).json(tmpResult);
@@ -62,6 +71,7 @@ router.get('/:name/:property', function(req, res) {
   		res.status(200).json(retData);
   	});
 });
+
 
 
 function logArrayData (prefix, data) {
