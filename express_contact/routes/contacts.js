@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   	}
   	else if(data) {
       console.log("data recieved, rendering page");
-      res.render('contacts', {title:"All Contacts", welcom_message: "Angular Directives in charge!", contacts:data })
+      res.render('contacts', {title:"All Contacts", welcom_message: "Custom Angular Directives!", contacts:data })
   	}
   	else {
   		res.render('contacts', { title: "Error" , welcom_message: "No meaningful response from the server:" + req.originalUrl });	

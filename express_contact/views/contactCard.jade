@@ -1,12 +1,15 @@
 |Contacts loaded from database: {{ contacts.length }}
 |<div ng-repeat="contact in contacts">
 |	<div class="contact">
+|		<div class="contact_data">
+| 			<p><strong>Name:</strong>{{contact.first_name}} {{contact.last_name}} </p> 
+|           <p><strong>Website:</strong> {{contact.website}}</p>
+|           <p><strong>Age:</strong> {{contact.age}}</p>
+|           <p><strong>Mobile:</strong> {{contact.mobile_phone }}</p>
+|           <p><strong>ID:</strong> {{contact._id}}</p>
+|		</div>	
+|		<div class="contact_image">
 img(src="/images/custom_user.jpg")
-| <p>{{contact.first_name}} {{contact.last_name}} </p> 
-|                <p>Website: {{contact.website}}</p>
-|                <p>Age: {{contact.age}}</p>
-|                <p>Mobile: {{contact.mobile_phone }}</p>
-|            	 <p>ID:{{contact._id}}</p>
-|	</div>
+|		</div>
 |	</div>
 |</div>

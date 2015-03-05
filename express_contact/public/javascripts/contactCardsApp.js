@@ -17,9 +17,8 @@ contactCardsApp.controller('ContactListCtrl', ['$scope', '$http',function ($scop
         return true;
     };
 }])
-.directive('loadInformation', function(){
+.directive('contactCardInformation', function(){
     return {
         templateUrl: '/contact/template/contactCard'
     };
-})
-.directive();
+});
