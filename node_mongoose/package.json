@@ -1,0 +1,9 @@
+{
+  "name": "node_mongoose",
+  "version": "0.0.1",
+  "description": "Sample for demonstration purposes of mongoose",
+  "dependencies": {
+    "mongoose": "~3.8.24",
+    "mongodb": "~1.4.34"
+  }
+}
