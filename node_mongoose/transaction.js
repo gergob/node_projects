@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var transactionSchema = mongoose.Schema({
+	transactionId: String,
 	from : String,
 	to: String,
 	fromOwner : String,
@@ -8,9 +9,12 @@ var transactionSchema = mongoose.Schema({
 	currency: String,
 	value: Number,
 	createdOn: Date,
-	executedOn: Date
+	executedOn: Date,
+	wasExecuted: Boolean
 });
 
 var Transaction = mongoose.model('Transaction', transactionSchema);
+var TransactionSchema = transactionSchema;
 
-module.exports = Transaction;
+module.exports.Transaction = Transaction;
+module.exports.TransactionSchema = TransactionSchema;
